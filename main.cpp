@@ -1,7 +1,5 @@
 #include "GL/gl.h"
 #include <GL/freeglut.h>
-#include <iostream>
-#include <math.h>
 
 // objectos
 void islaFlotante() {
@@ -17609,12 +17607,6 @@ void display() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
 
-    /*// Configurar c�mara
-    float centerX = camX + camFrontX;
-    float centerY = camY + camFrontY;
-    float centerZ = camZ + camFrontZ;
-    gluLookAt(camX, camY, camZ, centerX, centerY, centerZ, camUpX, camUpY,
-    camUpZ);*/
     gluLookAt(88.8052f, 29.7253f, -70.5435f, 87.9294f, 29.6939f, -70.062f, 0.0f,
               1.0f, 0.0f);
 
@@ -17631,8 +17623,12 @@ void init() {
     glEnable(GL_LIGHT0);
     glEnable(GL_COLOR_MATERIAL);
 
-    GLfloat light_pos[] = {10.0f, 20.0f, 20.0f, 0.0f}; // Luz direccional
+    GLfloat light_pos[] = {10.0f, 20.0f, 20.0f, 1.0f}; // Luz direccional
     glLightfv(GL_LIGHT0, GL_POSITION, light_pos);
+
+    GLfloat light_pos2[] = {-4.929f, 1.166f, -1.217f, 1.0f}; // POINT LIGHT
+    glLightfv(GL_LIGHT0, GL_POSITION, light_pos2);
+
 
     GLfloat ambient[] = {0.3f, 0.3f, 0.3f, 1.0f};
     glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambient);
