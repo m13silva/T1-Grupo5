@@ -1,0 +1,15 @@
+# yaml-language-server: $schema=https://json.schemastore.org/clangd.json
+CompileFlags:
+  Add: [
+      -std=c++98,
+      -fno-builtin,
+      -IC:/Program Files (x86)/Dev-Cpp/MinGW64/include,
+      -IC:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include,
+      -IC:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include,
+      -IC:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++,
+      #-D__CLANG_MAX_ALIGN_T_DEFINED,
+      -D__rdtsc=__rdtsc_dummy,
+      --target=x86_64-w64-mingw32,
+      -Wno-everything,
+    ]
+  #Compiler: "C:/Program Files (x86)/Dev-Cpp/MinGW64/bin/g++.exe"
