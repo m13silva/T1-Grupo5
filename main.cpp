@@ -17664,6 +17664,16 @@ void rocksSmall() {
 
 }
 
+void gCamera(float px, float py, float pz,
+                 float byx, float byy, float byz, // basis y
+                 float bzx, float bzy, float bzz) // basis z
+{
+    float tx = px + (-bzx);
+    float ty = py + (-bzy);
+    float tz = pz + (-bzz);
+    gluLookAt(px, py, pz, tx, ty, tz, byx, byy, byz);
+}
+
 void gTranslatef(float x, float y, float z) {
     glTranslatef(x * 10, y * 10, z * 10);
 }
@@ -17743,8 +17753,9 @@ void display() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
 
-    gluLookAt(88.8052f, 29.7253f, -70.5435f, 87.9294f, 29.6939f, -70.062f, 0.0f,
-              1.0f, 0.0f);
+    /*gluLookAt(88.8052f, 29.7253f, -70.5435f, 87.9294f, 29.6939f, -70.062f, 0.0f,
+              1.0f, 0.0f);*/
+    gCamera(8.460111f * 10 , 4.579731f * 10 , 5.525996f * 10 , -0.230628f, 0.967217f, -0.106312f,0.878384f, 0.253952f, 0.404908f);
 
     scene();
     // Intercambiar los buffers
@@ -17761,9 +17772,9 @@ void init() {
     glEnable(GL_NORMALIZE);
 
     // Luz principal imitando el sol de la imagen
-    GLfloat luz_pos[] = { 10.0f, 15.0f, 10.0f, 0.0f };
-    GLfloat luz_amb[] = { 0.4f, 0.4f, 0.4f, 1.0f };
-    GLfloat luz_dif[] = { 0.9f, 0.9f, 0.8f, 1.0f };
+    GLfloat luz_pos[] = { 10.0f, 15.0f, 10.0f, 1000.0f };
+    GLfloat luz_amb[] = { 0.4f, 0.4f, 0.4f, 1000.0f };
+    GLfloat luz_dif[] = { 0.9f, 0.9f, 0.8f, 1000.0f };
     glLightfv(GL_LIGHT0, GL_POSITION, luz_pos);
     glLightfv(GL_LIGHT0, GL_AMBIENT, luz_amb);
     glLightfv(GL_LIGHT0, GL_DIFFUSE, luz_dif);
