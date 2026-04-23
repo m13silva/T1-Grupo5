@@ -12,6 +12,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cp6utn70xsjbg" path="res://modelos/rocks-large.obj" id="10_5juve"]
 [ext_resource type="Script" uid="uid://dceovccfi4uiy" path="res://camera_3d.gd" id="11_5c1cw"]
 [ext_resource type="ArrayMesh" uid="uid://dtcckgacguhyl" path="res://modelos/isla_flotante_testcolor.obj" id="11_fy5k1"]
+[ext_resource type="ArrayMesh" uid="uid://csbxubqbd48ak" path="res://modelos/cesped_hoja.obj" id="13_akxrc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gu47o"]
 vertex_color_use_as_albedo = true
@@ -30,6 +31,12 @@ albedo_color = Color(0.28235295, 0.28235295, 0.28235295, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akxrc"]
 vertex_color_use_as_albedo = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_223my"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_akxrc"]
+radius = 1.9956055
 
 [node name="Node3D" type="Node3D" unique_id=1417311079]
 
@@ -129,3 +136,17 @@ visible = false
 [node name="IslaFlotanteTestcolor" type="MeshInstance3D" parent="." unique_id=2043792400]
 mesh = ExtResource("11_fy5k1")
 surface_material_override/0 = SubResource("StandardMaterial3D_akxrc")
+
+[node name="CespedHoja2" type="MeshInstance3D" parent="." unique_id=2039514157]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8010967, 0, 0.39788604)
+mesh = ExtResource("13_akxrc")
+surface_material_override/0 = SubResource("StandardMaterial3D_223my")
+
+[node name="CespedHoja" type="MeshInstance3D" parent="." unique_id=685882476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.79652643, 0, 0.3200279)
+mesh = ExtResource("13_akxrc")
+surface_material_override/0 = SubResource("StandardMaterial3D_223my")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1718080022]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7777935, 1.0554821, 2.434281)
+shape = SubResource("CylinderShape3D_akxrc")

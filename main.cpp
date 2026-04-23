@@ -17663,6 +17663,78 @@ void rocksSmall() {
     glEnd();
 
 }
+void cesped() {
+    // 15 vertices, 8 caras, 5 grupos por color
+
+    // --- grupo color 1 (3 caras) ---
+    glColor3f(0.3255f, 0.8313f, 0.0980f);
+
+    glBegin(GL_QUADS);
+        glVertex3f(0.0822f, 0.5023f, 0.1243f);
+        glVertex3f(0.0438f, -0.0466f, 0.0472f);
+        glVertex3f(-0.0000f, -0.0169f, -0.1866f);
+        glVertex3f(-0.0000f, 0.4814f, -0.1244f);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex3f(0.1255f, 0.4201f, 0.3035f);
+        glVertex3f(0.0876f, -0.0145f, 0.2370f);
+        glVertex3f(0.0438f, -0.0466f, 0.0472f);
+        glVertex3f(0.0822f, 0.5023f, 0.1243f);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex3f(0.1633f, 0.8548f, 0.3700f);
+        glVertex3f(0.1255f, 0.4201f, 0.3035f);
+        glVertex3f(0.0822f, 0.5023f, 0.1243f);
+        glVertex3f(0.1206f, 1.0512f, 0.2014f);
+    glEnd();
+
+    // --- grupo color 2 (1 caras) ---
+    glColor3f(0.8313f, 0.8313f, 0.1451f);
+
+    glBegin(GL_QUADS);
+        glVertex3f(0.1677f, 1.2895f, 0.4537f);
+        glVertex3f(0.1633f, 0.8548f, 0.3700f);
+        glVertex3f(0.1206f, 1.0512f, 0.2014f);
+        glVertex3f(0.1255f, 1.6000f, 0.2956f);
+    glEnd();
+
+    // --- grupo color 3 (2 caras) ---
+    glColor3f(0.8313f, 0.8313f, 0.1255f);
+
+    glBegin(GL_QUADS);
+        glVertex3f(0.1255f, 1.6000f, 0.2956f);
+        glVertex3f(0.1206f, 1.0512f, 0.2014f);
+        glVertex3f(-0.0000f, 0.9797f, -0.0621f);
+        glVertex3f(-0.0335f, 1.4780f, 0.0174f);
+    glEnd();
+    glBegin(GL_QUADS);
+        glVertex3f(0.2056f, 1.7241f, 0.5202f);
+        glVertex3f(0.1677f, 1.2895f, 0.4537f);
+        glVertex3f(0.1255f, 1.6000f, 0.2956f);
+        glVertex3f(0.1640f, 2.1489f, 0.3726f);
+    glEnd();
+
+    // --- grupo color 4 (1 caras) ---
+    glColor3f(0.3451f, 0.8353f, 0.1647f);
+
+    glBegin(GL_QUADS);
+        glVertex3f(0.1206f, 1.0512f, 0.2014f);
+        glVertex3f(0.0822f, 0.5023f, 0.1243f);
+        glVertex3f(-0.0000f, 0.4814f, -0.1244f);
+        glVertex3f(-0.0000f, 0.9797f, -0.0621f);
+    glEnd();
+
+    // --- grupo color 5 (1 caras) ---
+    glColor3f(0.8313f, 0.8313f, 0.1294f);
+
+    glBegin(GL_QUADS);
+        glVertex3f(0.1640f, 2.1489f, 0.3726f);
+        glVertex3f(0.1255f, 1.6000f, 0.2956f);
+        glVertex3f(-0.0335f, 1.4780f, 0.0174f);
+        glVertex3f(-0.0335f, 1.9763f, 0.0796f);
+    glEnd();
+
+}
 
 void gCamera(float px, float py, float pz,
                  float byx, float byy, float byz, // basis y
@@ -17746,6 +17818,16 @@ void scene() {
     glPushMatrix();
     gTranslatef(-2.096f, 0,2.749f);
     calabaza();
+    glPopMatrix();
+
+    glPushMatrix();
+    gTranslatef(-0.797f, 0,0.32f);
+    cesped();
+    glPopMatrix();
+
+    glPushMatrix();
+    gTranslatef(-0.801, 0,0.398f);
+    cesped();
     glPopMatrix();
 }
 
