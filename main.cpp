@@ -12127,7 +12127,7 @@ void display() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
 
-    /*// Configurar cámara
+    /*// Configurar cï¿½mara
     float centerX = camX + camFrontX;
     float centerY = camY + camFrontY;
     float centerZ = camZ + camFrontZ;
@@ -12142,7 +12142,7 @@ void display() {
 }
 
 
-// Configuración inicial
+// Configuracion inicial
 void init() {
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_LIGHTING);
