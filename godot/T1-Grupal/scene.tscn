@@ -10,15 +10,53 @@
 [ext_resource type="ArrayMesh" uid="uid://c1ee28cvoybtt" path="res://modelos/pumpkin.obj" id="8_fy5k1"]
 [ext_resource type="ArrayMesh" uid="uid://cnm3ihk652vwr" path="res://modelos/rocks-small.obj" id="9_73fnb"]
 [ext_resource type="ArrayMesh" uid="uid://cp6utn70xsjbg" path="res://modelos/rocks-large.obj" id="10_5juve"]
+[ext_resource type="Script" uid="uid://dceovccfi4uiy" path="res://camera_3d.gd" id="11_5c1cw"]
+[ext_resource type="ArrayMesh" uid="uid://dtcckgacguhyl" path="res://modelos/isla_flotante_testcolor.obj" id="11_fy5k1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gu47o"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5c1cw"]
+albedo_color = Color(0.5529412, 0.33333334, 0.20784314, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8hm71"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fy5k1"]
+albedo_color = Color(1, 0.4392157, 0.14117648, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5juve"]
+albedo_color = Color(0.28235295, 0.28235295, 0.28235295, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akxrc"]
+vertex_color_use_as_albedo = true
 
 [node name="Node3D" type="Node3D" unique_id=1417311079]
 
 [node name="IslaFlotante" type="MeshInstance3D" parent="." unique_id=639189742]
+visible = false
 mesh = ExtResource("1_ulcgi")
 
 [node name="Molino" type="MeshInstance3D" parent="." unique_id=900706938]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.861028, -0.21578288, 1.6347094)
 mesh = ExtResource("2_nxogm")
+surface_material_override/0 = SubResource("StandardMaterial3D_gu47o")
+surface_material_override/1 = SubResource("StandardMaterial3D_gu47o")
+surface_material_override/2 = SubResource("StandardMaterial3D_gu47o")
+surface_material_override/3 = SubResource("StandardMaterial3D_gu47o")
+surface_material_override/4 = SubResource("StandardMaterial3D_gu47o")
+surface_material_override/5 = SubResource("StandardMaterial3D_gu47o")
+surface_material_override/6 = SubResource("StandardMaterial3D_gu47o")
+surface_material_override/7 = SubResource("StandardMaterial3D_gu47o")
+surface_material_override/8 = SubResource("StandardMaterial3D_gu47o")
+surface_material_override/9 = SubResource("StandardMaterial3D_gu47o")
+surface_material_override/10 = SubResource("StandardMaterial3D_gu47o")
+surface_material_override/11 = SubResource("StandardMaterial3D_gu47o")
+surface_material_override/12 = SubResource("StandardMaterial3D_gu47o")
+surface_material_override/13 = SubResource("StandardMaterial3D_gu47o")
+surface_material_override/14 = SubResource("StandardMaterial3D_gu47o")
+surface_material_override/15 = SubResource("StandardMaterial3D_gu47o")
+surface_material_override/16 = SubResource("StandardMaterial3D_gu47o")
 
 [node name="TreePine" type="MeshInstance3D" parent="." unique_id=289149279]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.703)
@@ -39,6 +77,7 @@ mesh = ExtResource("4_m7jmp")
 [node name="Ballas" type="MeshInstance3D" parent="." unique_id=479068197]
 transform = Transform3D(0.875854, 0, 0.48257613, 0, 1, 0, -0.48257613, 0, 0.875854, -2.8727236, 0, -2.8412256)
 mesh = ExtResource("5_xlvrw")
+surface_material_override/0 = SubResource("StandardMaterial3D_5c1cw")
 
 [node name="Ballas2" type="MeshInstance3D" parent="." unique_id=857681919]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9527428, 0, 4.1706953)
@@ -47,10 +86,23 @@ mesh = ExtResource("6_73fnb")
 [node name="Casa" type="MeshInstance3D" parent="." unique_id=877889552]
 transform = Transform3D(0.9321661, 0, 0.36203086, 0, 1, 0, -0.36203086, 0, 0.9321661, -5.457178, -0.084059715, -2.2689328)
 mesh = ExtResource("7_5juve")
+surface_material_override/0 = SubResource("StandardMaterial3D_8hm71")
+surface_material_override/1 = SubResource("StandardMaterial3D_8hm71")
+surface_material_override/2 = SubResource("StandardMaterial3D_8hm71")
+surface_material_override/3 = SubResource("StandardMaterial3D_8hm71")
+surface_material_override/4 = SubResource("StandardMaterial3D_8hm71")
+surface_material_override/5 = SubResource("StandardMaterial3D_8hm71")
+surface_material_override/6 = SubResource("StandardMaterial3D_8hm71")
+surface_material_override/7 = SubResource("StandardMaterial3D_8hm71")
+surface_material_override/8 = SubResource("StandardMaterial3D_8hm71")
+surface_material_override/9 = SubResource("StandardMaterial3D_8hm71")
+surface_material_override/10 = SubResource("StandardMaterial3D_8hm71")
+surface_material_override/11 = SubResource("StandardMaterial3D_8hm71")
 
 [node name="Pumpkin" type="MeshInstance3D" parent="." unique_id=254023196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7848134, 0, 3.373465)
 mesh = ExtResource("8_fy5k1")
+surface_material_override/0 = SubResource("StandardMaterial3D_fy5k1")
 
 [node name="Pumpkin2" type="MeshInstance3D" parent="." unique_id=1671277255]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0960581, 0, 2.7493222)
@@ -59,6 +111,7 @@ mesh = ExtResource("8_fy5k1")
 [node name="RocksSmall" type="MeshInstance3D" parent="." unique_id=1600544567]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2954288, 0, 2.704198)
 mesh = ExtResource("9_73fnb")
+surface_material_override/0 = SubResource("StandardMaterial3D_5juve")
 
 [node name="RocksLarge" type="MeshInstance3D" parent="." unique_id=576938676]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 3)
@@ -67,3 +120,12 @@ mesh = ExtResource("10_5juve")
 [node name="Camera3D" type="Camera3D" parent="." unique_id=779714163]
 transform = Transform3D(0.41863212, -0.23062798, 0.87838364, 0, 0.96721685, 0.25395197, -0.90815586, -0.10631246, 0.40490803, 8.460111, 4.579731, 5.525996)
 fov = 60.0
+script = ExtResource("11_5c1cw")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=924936217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9294, 1.1658583, -1.217471)
+visible = false
+
+[node name="IslaFlotanteTestcolor" type="MeshInstance3D" parent="." unique_id=2043792400]
+mesh = ExtResource("11_fy5k1")
+surface_material_override/0 = SubResource("StandardMaterial3D_akxrc")
