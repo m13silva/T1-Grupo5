@@ -1,0 +1,23 @@
+{
+  "file_scan_exclusions": [
+    "**/*.o",
+    "**/*.dev",
+    "**/*.layout",
+    "**/*.win",
+    "*.exe",
+    "**/.git",
+  ],
+  "lsp": {
+    "clangd": {
+      "binary": {
+        "arguments": [
+          "--background-index",
+          "--clang-tidy",
+          "--completion-style=detailed",
+          "--header-insertion=iwyu",
+          "--pch-storage=memory",
+        ],
+      },
+    },
+  },
+}

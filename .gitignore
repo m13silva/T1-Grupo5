@@ -20,8 +20,6 @@ CMakeFiles/
 cmake_install.cmake
 Makefile
 
-# Zed editor
-.zed/
 
 # macOS
 .DS_Store
