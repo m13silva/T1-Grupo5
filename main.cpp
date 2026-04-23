@@ -17779,6 +17779,13 @@ void init() {
     glLightfv(GL_LIGHT0, GL_AMBIENT, luz_amb);
     glLightfv(GL_LIGHT0, GL_DIFFUSE, luz_dif);
 
+    glEnable(GL_FOG);
+    glFogi(GL_FOG_MODE, GL_LINEAR);
+    GLfloat fogColor[] = {0.5f, 0.7f, 1.0f, 1.0f}; // azul cielo
+    glFogfv(GL_FOG_COLOR, fogColor);
+    glFogf(GL_FOG_START, 100.0f);
+    glFogf(GL_FOG_END, 250.0f);
+
     glEnable(GL_COLOR_MATERIAL);
     glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
 }
