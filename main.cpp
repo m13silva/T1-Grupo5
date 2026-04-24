@@ -1,4 +1,6 @@
 #include "GL/gl.h"
+#include <cstdlib>
+#include <cmath>
 #include <GL/freeglut.h>
 
 // objectos
@@ -17754,6 +17756,49 @@ void gRotate(float x, float y, float z) {
     glRotatef(x, 1.0f, 0.0f, 0.0f);
     glRotatef(z, 0.0f, 0.0f, 1.0f);
 }
+
+// Método para poblar césped en un área CIRCULAR
+void poblarCespedCirculo(float x, float y, float z, float radio, int cantidad,int semilla = 42) {
+     srand(semilla);
+    for (int i = 0; i < cantidad; i++) {
+        // Generar un ángulo aleatorio entre 0 y 360 grados
+        float angulo = (rand() % 360) * 3.14159f / 180.0f;
+
+        // Generar un radio aleatorio dentro del límite (raíz cuadrada para distribución uniforme)
+        float r = radio * sqrt((float)rand() / RAND_MAX);
+
+        float pos_x = x + r * cos(angulo);
+        float pos_z = z + r * sin(angulo);
+
+        glPushMatrix();
+        gTranslatef(pos_x, y, pos_z);
+        glRotatef(rand() % 360, 0, 1, 0);// Rotación aleatoria para que no se vean repetidos
+        cesped();
+        glPopMatrix();
+    }
+}
+
+// Método para poblar césped en un área CUADRADA
+void poblarCespedCuadrado(float x, float y, float z, float sizeX, float sizeY, float sizeZ, int cantidad, int semilla = 42) {
+    srand(semilla);
+
+     float mitadX = sizeX / 2.0f;
+     float mitadY = sizeY / 2.0f;
+     float mitadZ = sizeZ / 2.0f;
+
+     for (int i = 0; i < cantidad; i++) {
+         // Generar posiciones aleatorias para cada eje basado en el 'size'
+         float offsetX = -mitadX + ((float)rand() / RAND_MAX) * sizeX;
+         float offsetY = -mitadY + ((float)rand() / RAND_MAX) * sizeY;
+         float offsetZ = -mitadZ + ((float)rand() / RAND_MAX) * sizeZ;
+
+         glPushMatrix();
+         gTranslatef(x + offsetX, y + offsetY, z + offsetZ);
+         glRotatef(rand() % 360, 0, 1, 0); // Rotación aleatoria para que no se vean repetidos
+         cesped();
+         glPopMatrix();
+     }
+}
 //
 void scene() {
     islaFlotante();
@@ -17820,7 +17865,7 @@ void scene() {
     calabaza();
     glPopMatrix();
 
-    glPushMatrix();
+    /*glPushMatrix();
     gTranslatef(-0.797f, 0,0.32f);
     cesped();
     glPopMatrix();
@@ -17828,7 +17873,9 @@ void scene() {
     glPushMatrix();
     gTranslatef(-0.801, 0,0.398f);
     cesped();
-    glPopMatrix();
+    glPopMatrix();*/
+    poblarCespedCirculo(0.778, 0, 2.434f, 1.996f, 2000);
+    poblarCespedCuadrado(-6.005, 0.501, -6.066, 2,1,2, 1000);
 }
 
 void display() {
