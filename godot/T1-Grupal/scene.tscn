@@ -13,6 +13,8 @@
 [ext_resource type="Script" uid="uid://dceovccfi4uiy" path="res://camera_3d.gd" id="11_5c1cw"]
 [ext_resource type="ArrayMesh" uid="uid://dtcckgacguhyl" path="res://modelos/isla_flotante_testcolor.obj" id="11_fy5k1"]
 [ext_resource type="ArrayMesh" uid="uid://csbxubqbd48ak" path="res://modelos/cesped_hoja.obj" id="13_akxrc"]
+[ext_resource type="ArrayMesh" uid="uid://cv4c7ibr8d3jx" path="res://modelos/ave_reposo.obj" id="14_gu47o"]
+[ext_resource type="ArrayMesh" uid="uid://gg3oue13r8eo" path="res://modelos/ave_volando.obj" id="15_8hm71"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gu47o"]
 vertex_color_use_as_albedo = true
@@ -40,6 +42,12 @@ size = Vector3(2, 1, 2)
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_akxrc"]
 radius = 1.9956055
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17rhs"]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8j1ou"]
+vertex_color_use_as_albedo = true
 
 [node name="Node3D" type="Node3D" unique_id=1417311079]
 
@@ -159,3 +167,47 @@ debug_color = Color(0, 0, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7777935, 1.0554821, 2.434281)
 shape = SubResource("CylinderShape3D_akxrc")
 debug_color = Color(0, 0, 0, 1)
+
+[node name="AveReposo" type="MeshInstance3D" parent="." unique_id=943094432]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -5.054788, 2.3737102, -1.9627976)
+mesh = ExtResource("14_gu47o")
+surface_material_override/0 = SubResource("StandardMaterial3D_17rhs")
+surface_material_override/1 = SubResource("StandardMaterial3D_17rhs")
+surface_material_override/2 = SubResource("StandardMaterial3D_17rhs")
+surface_material_override/3 = SubResource("StandardMaterial3D_17rhs")
+surface_material_override/4 = SubResource("StandardMaterial3D_17rhs")
+surface_material_override/5 = SubResource("StandardMaterial3D_17rhs")
+surface_material_override/6 = SubResource("StandardMaterial3D_17rhs")
+
+[node name="AveReposo2" type="MeshInstance3D" parent="." unique_id=1421235103]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.1992357, 0.49097127, 2.5643682)
+mesh = ExtResource("14_gu47o")
+surface_material_override/0 = SubResource("StandardMaterial3D_17rhs")
+surface_material_override/1 = SubResource("StandardMaterial3D_17rhs")
+surface_material_override/2 = SubResource("StandardMaterial3D_17rhs")
+surface_material_override/3 = SubResource("StandardMaterial3D_17rhs")
+surface_material_override/4 = SubResource("StandardMaterial3D_17rhs")
+surface_material_override/5 = SubResource("StandardMaterial3D_17rhs")
+surface_material_override/6 = SubResource("StandardMaterial3D_17rhs")
+
+[node name="AveVolando" type="MeshInstance3D" parent="." unique_id=372001837]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -3.9526992, 2.1419117, 3.9728057)
+mesh = ExtResource("15_8hm71")
+surface_material_override/0 = SubResource("StandardMaterial3D_8j1ou")
+surface_material_override/1 = SubResource("StandardMaterial3D_8j1ou")
+surface_material_override/2 = SubResource("StandardMaterial3D_8j1ou")
+surface_material_override/3 = SubResource("StandardMaterial3D_8j1ou")
+surface_material_override/4 = SubResource("StandardMaterial3D_8j1ou")
+surface_material_override/5 = SubResource("StandardMaterial3D_8j1ou")
+surface_material_override/6 = SubResource("StandardMaterial3D_8j1ou")
+
+[node name="AveVolando2" type="MeshInstance3D" parent="." unique_id=1463836130]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.17591593, 0.5102309, 2.9359179)
+mesh = ExtResource("15_8hm71")
+surface_material_override/0 = SubResource("StandardMaterial3D_8j1ou")
+surface_material_override/1 = SubResource("StandardMaterial3D_8j1ou")
+surface_material_override/2 = SubResource("StandardMaterial3D_8j1ou")
+surface_material_override/3 = SubResource("StandardMaterial3D_8j1ou")
+surface_material_override/4 = SubResource("StandardMaterial3D_8j1ou")
+surface_material_override/5 = SubResource("StandardMaterial3D_8j1ou")
+surface_material_override/6 = SubResource("StandardMaterial3D_8j1ou")
