@@ -26644,9 +26644,10 @@ void gCamera(float px, float py, float pz,
     gluLookAt(px, py, pz, tx, ty, tz, byx, byy, byz);
 }
 
-void gTranslatef(float x, float y, float z) {
-    glTranslatef(x * 10, y * 10, z * 10);
+void gTranslatef(float x, float y, float z , float escala = 10) {
+    glTranslatef(x * escala, y * escala, z * escala);
 }
+
 void gRotate(float x, float y, float z) {
     glRotatef(y, 0.0f, 1.0f, 0.0f);
     glRotatef(x, 1.0f, 0.0f, 0.0f);
