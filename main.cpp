@@ -26655,8 +26655,8 @@ void gRotate(float x, float y, float z) {
 }
 
 // Método para poblar césped en un área CIRCULAR
-void poblarCespedCirculo(float x, float y, float z, float radio, int cantidad,int semilla = 42) {
-     srand(semilla);
+void poblarCirculo(float x, float y, float z, float radio, int cantidad,void (*objecto)(),int semilla = 42) {
+    srand(semilla);
     for (int i = 0; i < cantidad; i++) {
         // Generar un ángulo aleatorio entre 0 y 360 grados
         float angulo = (rand() % 360) * 3.14159f / 180.0f;
@@ -26670,31 +26670,31 @@ void poblarCespedCirculo(float x, float y, float z, float radio, int cantidad,in
         glPushMatrix();
         gTranslatef(pos_x, y, pos_z);
         glRotatef(rand() % 360, 0, 1, 0);// Rotación aleatoria para que no se vean repetidos
-        cesped();
+        objecto();
         glPopMatrix();
     }
 }
 
 // Método para poblar césped en un área CUADRADA
-void poblarCespedCuadrado(float x, float y, float z, float sizeX, float sizeY, float sizeZ, int cantidad, int semilla = 42) {
+void poblarCuadrado(float x, float y, float z, float sizeX, float sizeY, float sizeZ, int cantidad,void (*objecto)(), int semilla = 42) {
     srand(semilla);
 
-     float mitadX = sizeX / 2.0f;
-     float mitadY = sizeY / 2.0f;
-     float mitadZ = sizeZ / 2.0f;
+    float mitadX = sizeX / 2.0f;
+    float mitadY = sizeY / 2.0f;
+    float mitadZ = sizeZ / 2.0f;
 
-     for (int i = 0; i < cantidad; i++) {
+    for (int i = 0; i < cantidad; i++) {
          // Generar posiciones aleatorias para cada eje basado en el 'size'
-         float offsetX = -mitadX + ((float)rand() / RAND_MAX) * sizeX;
-         float offsetY = -mitadY + ((float)rand() / RAND_MAX) * sizeY;
-         float offsetZ = -mitadZ + ((float)rand() / RAND_MAX) * sizeZ;
+        float offsetX = -mitadX + ((float)rand() / RAND_MAX) * sizeX;
+        float offsetY = -mitadY + ((float)rand() / RAND_MAX) * sizeY;
+        float offsetZ = -mitadZ + ((float)rand() / RAND_MAX) * sizeZ;
 
-         glPushMatrix();
-         gTranslatef(x + offsetX, y + offsetY, z + offsetZ);
-         glRotatef(rand() % 360, 0, 1, 0); // Rotación aleatoria para que no se vean repetidos
-         cesped();
-         glPopMatrix();
-     }
+        glPushMatrix();
+        gTranslatef(x + offsetX, y + offsetY, z + offsetZ);
+        glRotatef(rand() % 360, 0, 1, 0); // Rotación aleatoria para que no se vean repetidos
+        objecto();
+        glPopMatrix();
+    }
 }
 //
 void scene() {
@@ -26771,8 +26771,8 @@ void scene() {
     gTranslatef(-0.801, 0,0.398f);
     cesped();
     glPopMatrix();*/
-    poblarCespedCirculo(0.778, 0, 2.434f, 1.996f, 2000);
-    poblarCespedCuadrado(-6.005, 0.501, -6.066, 2,1,2, 1000);
+    poblarCirculo(0.778, 0, 2.434f, 1.996f, 2000,cesped);
+    poblarCuadrado(-6.005, 0.501, -6.066, 2,1,2, 1000,cesped);
 
     glPushMatrix();
     gTranslatef(-5.055f, 2.374f,-1.963f);
