@@ -20,6 +20,9 @@ CMakeFiles/
 cmake_install.cmake
 Makefile
 
-
 # macOS
 .DS_Store
+
+# Godot 4+ specific ignores
+.godot/
+/android/
